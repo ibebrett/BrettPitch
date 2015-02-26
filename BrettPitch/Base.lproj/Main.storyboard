@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -37,15 +39,14 @@
                                 <state key="normal" image="StopButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="275" y="730" width="50" height="50"/>
-                                </variation>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="K2F-TT-8aV" firstAttribute="top" secondItem="Ng0-Gw-Tbg" secondAttribute="bottom" constant="16" id="BDX-Hj-IU2"/>
                             <constraint firstAttribute="centerY" secondItem="Ng0-Gw-Tbg" secondAttribute="centerY" id="ClU-5w-Lgi"/>
+                            <constraint firstItem="MdL-Wx-vzA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="259" id="Gb4-Fs-P6G"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="MdL-Wx-vzA" secondAttribute="bottom" constant="25" id="Tru-2o-wGA"/>
                             <constraint firstAttribute="centerX" secondItem="K2F-TT-8aV" secondAttribute="centerX" id="VtL-Hq-M8E"/>
                             <constraint firstAttribute="centerX" secondItem="Ng0-Gw-Tbg" secondAttribute="centerX" id="cnd-O9-nPh"/>
                             <constraint firstAttribute="centerX" secondItem="MdL-Wx-vzA" secondAttribute="centerX" id="hbL-cd-96x"/>
@@ -58,12 +59,14 @@
                                 <exclude reference="MdL-Wx-vzA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ClU-5w-Lgi"/>
-                                <exclude reference="cnd-O9-nPh"/>
+                                <exclude reference="Tru-2o-wGA"/>
                                 <exclude reference="BDX-Hj-IU2"/>
                                 <exclude reference="VtL-Hq-M8E"/>
+                                <exclude reference="Gb4-Fs-P6G"/>
                                 <exclude reference="hbL-cd-96x"/>
                                 <exclude reference="kum-Tx-5JN"/>
+                                <exclude reference="ClU-5w-Lgi"/>
+                                <exclude reference="cnd-O9-nPh"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -73,12 +76,14 @@
                                 <include reference="MdL-Wx-vzA"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ClU-5w-Lgi"/>
-                                <include reference="cnd-O9-nPh"/>
+                                <include reference="Tru-2o-wGA"/>
                                 <include reference="BDX-Hj-IU2"/>
                                 <include reference="VtL-Hq-M8E"/>
+                                <exclude reference="Gb4-Fs-P6G"/>
                                 <include reference="hbL-cd-96x"/>
-                                <include reference="kum-Tx-5JN"/>
+                                <exclude reference="kum-Tx-5JN"/>
+                                <include reference="ClU-5w-Lgi"/>
+                                <include reference="cnd-O9-nPh"/>
                             </mask>
                         </variation>
                     </view>
