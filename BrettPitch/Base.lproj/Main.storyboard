@@ -6,27 +6,61 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Play Sounds View Controller-->
         <scene sceneID="vNg-I1-g9b">
             <objects>
-                <viewController id="Wua-c9-DXT" sceneMemberID="viewController">
+                <viewController id="Wua-c9-DXT" customClass="PlaySoundsViewController" customModule="BrettPitch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qGx-pw-TAI"/>
                         <viewControllerLayoutGuide type="bottom" id="wcz-On-APE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7RG-KL-VHf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssQ-4N-hJL">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Slow">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSlow:" destination="Wua-c9-DXT" eventType="touchUpInside" id="49G-Fm-1Br"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ssQ-4N-hJL" firstAttribute="leading" secondItem="7RG-KL-VHf" secondAttribute="leadingMargin" id="7TK-Md-rwe"/>
+                            <constraint firstItem="ssQ-4N-hJL" firstAttribute="top" secondItem="qGx-pw-TAI" secondAttribute="bottom" constant="8" id="zRL-Lu-PJS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ssQ-4N-hJL"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7TK-Md-rwe"/>
+                                <exclude reference="zRL-Lu-PJS"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="ssQ-4N-hJL"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7TK-Md-rwe"/>
+                                <include reference="zRL-Lu-PJS"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lae-Vt-PMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832" y="-291"/>
+            <point key="canvasLocation" x="2015" y="-377.25"/>
         </scene>
         <!--Recorder-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BrettPitch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordSoundsViewController" customModule="BrettPitch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -57,7 +91,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wua-c9-DXT" kind="show" id="qYP-ER-db5"/>
+                                    <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="muu-X1-soF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -111,11 +145,12 @@
                     <connections>
                         <outlet property="recordingInProgress" destination="K2F-TT-8aV" id="ecc-gZ-kS2"/>
                         <outlet property="stopButton" destination="MdL-Wx-vzA" id="f4a-nc-npD"/>
+                        <segue destination="Wua-c9-DXT" kind="show" identifier="StopRecording" id="7Bg-vB-qTy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1171" y="-279.75"/>
+            <point key="canvasLocation" x="1171" y="-406.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L7z-ll-pQ7">
@@ -133,11 +168,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NR1-jq-0Yo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="403" y="-279.75"/>
+            <point key="canvasLocation" x="-369" y="-201"/>
         </scene>
     </scenes>
     <resources>
         <image name="Microphone" width="100" height="100"/>
+        <image name="Slow" width="100" height="100"/>
         <image name="StopButton" width="50" height="50"/>
     </resources>
 </document>
