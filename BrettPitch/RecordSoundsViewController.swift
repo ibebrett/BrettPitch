@@ -9,9 +9,10 @@
 import UIKit
 import AVFoundation
 
-class RecordSoundsViewController: UIViewController {
+class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var audioRecorder:AVAudioRecorder!
     
+    @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     
@@ -22,6 +23,8 @@ class RecordSoundsViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         stopButton.hidden = true;
+        recordButton.enabled = true;
+        recordingInProgress.hidden = true;
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,8 +37,22 @@ class RecordSoundsViewController: UIViewController {
         audioRecorder.stop()
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "StopRecording" {
+            let destVC = segue.destinationViewController as PlaySoundsViewController
+            let recordedAudio = sender as RecordedAudio
+            destVC.setSoundURL(recordedAudio.path)
+        }
+    }
+    
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
+        var recordedAudio = RecordedAudio()
+        recordedAudio.path = recorder.url;
         
-        performSegueWithIdentifier("StopRecording", sender: nil)
+        performSegueWithIdentifier("StopRecording", sender: recordedAudio);
+        
     }
     
     @IBAction func recordAudio(sender: UIButton) {
@@ -53,10 +70,13 @@ class RecordSoundsViewController: UIViewController {
         
         audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
         audioRecorder.meteringEnabled = true
+        audioRecorder.delegate = self
         audioRecorder.record()
         
         recordingInProgress.hidden = false;
         stopButton.hidden = false;
+        recordButton.enabled = false;
+        recordingInProgress.hidden = false;
     }
 }
 

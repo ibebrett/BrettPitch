@@ -23,32 +23,102 @@
                                 <state key="normal" image="Slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="89" y="108" width="100" height="100"/>
+                                </variation>
                                 <connections>
                                     <action selector="playSlow:" destination="Wua-c9-DXT" eventType="touchUpInside" id="49G-Fm-1Br"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPe-bp-2Lv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Fast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playFast:" destination="Wua-c9-DXT" eventType="touchUpInside" id="D4L-mY-GXl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpX-6w-RDw">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Darthvader">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="411" y="246" width="100" height="100"/>
+                                </variation>
+                                <connections>
+                                    <action selector="playDarth:" destination="Wua-c9-DXT" eventType="touchUpInside" id="N0v-jM-CJq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llU-7h-ILJ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Chipmunk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="89" y="246" width="100" height="100"/>
+                                </variation>
+                                <connections>
+                                    <action selector="playChipmunk:" destination="Wua-c9-DXT" eventType="touchUpInside" id="anK-KX-Xc0"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ssQ-4N-hJL" firstAttribute="leading" secondItem="7RG-KL-VHf" secondAttribute="leadingMargin" id="7TK-Md-rwe"/>
+                            <constraint firstItem="ssQ-4N-hJL" firstAttribute="top" secondItem="qGx-pw-TAI" secondAttribute="bottom" constant="44" id="CJI-Jb-Myu"/>
+                            <constraint firstItem="yPe-bp-2Lv" firstAttribute="top" secondItem="qGx-pw-TAI" secondAttribute="bottom" constant="44" id="Fkl-0h-jbB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yPe-bp-2Lv" secondAttribute="trailing" constant="63" id="TO7-1B-tcc">
+                                <variation key="heightClass=regular" constant="73"/>
+                            </constraint>
+                            <constraint firstItem="llU-7h-ILJ" firstAttribute="leading" secondItem="7RG-KL-VHf" secondAttribute="leadingMargin" constant="73" id="WsH-ta-IwI"/>
+                            <constraint firstItem="ssQ-4N-hJL" firstAttribute="top" secondItem="qGx-pw-TAI" secondAttribute="bottom" constant="44" id="hA5-WG-iJV"/>
+                            <constraint firstItem="ssQ-4N-hJL" firstAttribute="leading" secondItem="7RG-KL-VHf" secondAttribute="leadingMargin" constant="73" id="m9F-WT-rXB"/>
+                            <constraint firstAttribute="width" secondItem="EpX-6w-RDw" secondAttribute="width" id="rgU-a8-o0R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EpX-6w-RDw" secondAttribute="trailing" constant="63" id="tPu-vA-Umc">
+                                <variation key="heightClass=regular" constant="73"/>
+                            </constraint>
                             <constraint firstItem="ssQ-4N-hJL" firstAttribute="top" secondItem="qGx-pw-TAI" secondAttribute="bottom" constant="8" id="zRL-Lu-PJS"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ssQ-4N-hJL"/>
+                                <exclude reference="yPe-bp-2Lv"/>
+                                <exclude reference="EpX-6w-RDw"/>
+                                <exclude reference="llU-7h-ILJ"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="7TK-Md-rwe"/>
+                                <exclude reference="CJI-Jb-Myu"/>
+                                <exclude reference="hA5-WG-iJV"/>
+                                <exclude reference="m9F-WT-rXB"/>
                                 <exclude reference="zRL-Lu-PJS"/>
+                                <exclude reference="WsH-ta-IwI"/>
+                                <exclude reference="Fkl-0h-jbB"/>
+                                <exclude reference="TO7-1B-tcc"/>
+                                <exclude reference="rgU-a8-o0R"/>
+                                <exclude reference="tPu-vA-Umc"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="ssQ-4N-hJL"/>
+                                <include reference="yPe-bp-2Lv"/>
+                                <include reference="EpX-6w-RDw"/>
+                                <include reference="llU-7h-ILJ"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="7TK-Md-rwe"/>
+                                <include reference="CJI-Jb-Myu"/>
+                                <include reference="hA5-WG-iJV"/>
+                                <include reference="m9F-WT-rXB"/>
                                 <include reference="zRL-Lu-PJS"/>
+                                <include reference="WsH-ta-IwI"/>
+                                <include reference="Fkl-0h-jbB"/>
+                                <include reference="TO7-1B-tcc"/>
+                                <exclude reference="rgU-a8-o0R"/>
+                                <include reference="tPu-vA-Umc"/>
                             </mask>
                         </variation>
                     </view>
@@ -143,6 +213,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recorder" id="Flh-TZ-2R2"/>
                     <connections>
+                        <outlet property="recordButton" destination="Ng0-Gw-Tbg" id="6TZ-CR-szG"/>
                         <outlet property="recordingInProgress" destination="K2F-TT-8aV" id="ecc-gZ-kS2"/>
                         <outlet property="stopButton" destination="MdL-Wx-vzA" id="f4a-nc-npD"/>
                         <segue destination="Wua-c9-DXT" kind="show" identifier="StopRecording" id="7Bg-vB-qTy"/>
@@ -150,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1171" y="-406.5"/>
+            <point key="canvasLocation" x="1339" y="-334.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L7z-ll-pQ7">
@@ -172,6 +243,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Chipmunk" width="100" height="100"/>
+        <image name="Darthvader" width="100" height="100"/>
+        <image name="Fast" width="100" height="100"/>
         <image name="Microphone" width="100" height="100"/>
         <image name="Slow" width="100" height="100"/>
         <image name="StopButton" width="50" height="50"/>
